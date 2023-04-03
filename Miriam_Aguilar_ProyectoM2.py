@@ -47,51 +47,58 @@ c4 = 'Cuadrante IV'
 
 # Se inicia un ciclo while 
 while True:
+    # Se inicia una excepción con try para verificar que el usuario ingrese números enteros o decimales, 
+    # si no lo hace se emprime al usuario un mensaje que sólo puede ingresar números.
+    try:
     # Se pide al usuario que ingrese el valor de X y Y, se hace un cast con float porque es posible 
     # que el usuario ingrese números decimales
-    x = float(input('Ingrese X: '))
-    y = float(input('Ingrese Y: '))
-    # Se inicia una sentencia if, la primera para verificar si los X y Y se encuentran en el 
-    # cuadrante I, ya que si los valores de x,y son positivos (+,+) => Cuadrante I, si lo anterior es
-    # verdadero se imprime en pantalla el mensaje que el punto está en Cuadrante I. Se emplea break para
-    # finalizar el ciclo while.
-    if x > 0 and y > 0:
-        print('-----------------------------------------------------')
-        print(f'El punto se encuentra en el cuadrante {c1}.')
-        print('-----------------------------------------------------')
-        break
-    # Si la sentencia anterior es Falsa, se usa una sentencia elif, para verificar si los puntos X y Y se encuentran en el 
-    # cuadrante II, si el valor de x es negativo y y es positivo (+,-) => Cuadrante II, si lo anterior es
-    # verdadero se imprime en pantalla el mensaje que el punto está en Cuadrante II. Se emplea break para
-    # finalizar el ciclo while.
-    elif x < 0 and y > 0:
-        print('-----------------------------------------------------')
-        print(f'El punto se encuentra en el cuadrante {c2}.')
-        print('-----------------------------------------------------')
-        break
-    # Si las dos sentencias anteriores son Falsas, se usa otra sentencia elif, para verificar si los puntos X y Y 
-    # se encuentran en el cuadrante III, si el valor de X es negativo y Y es negativo (-,-) => Cuadrante III, 
-    # si lo anterior es verdadero se imprime en pantalla el mensaje que el punto está en Cuadrante III. 
-    # Se emplea break para finalizar el ciclo while.
-    elif x < 0 and y < 0:
-        print('-----------------------------------------------------')
-        print(f'El punto se encuentra en el cuadrante {c3}.')
-        print('-----------------------------------------------------')
-        break
-    # Si las tres sentencias anteriores son Falsas, se usa otra sentencia elif, para verificar si los puntos X y Y 
-    # se encuentran en el cuadrante IV, si el valor de X es positivo y Y es negativo (+,-) => Cuadrante IV, 
-    # si lo anterior es verdadero se imprime en pantalla el mensaje que el punto está en Cuadrante IV. 
-    # Se emplea break para finalizar el ciclo while.
-    elif x > 0 and y < 0:
-        print('-----------------------------------------------------')
-        print(f'El punto se encuentra en el cuadrante {c4}.')
-        print('-----------------------------------------------------')
-        break
-    # Se emple else para verificar que los puntos X,Y ingresados por el usuario sean diferentes de cero. 
-    # Por lo tanto, si el usuario ingresa dos ceros se le pedirá que ingrese las coordenadas o puntos nuevamente.
-    # Por medio de continue se vuelve al punto inicial del ciclo while.
-    else:
-        print('==========================================')
-        print('Las coordenadas deben ser diferentes de 0.\nIngresa nuevamente las coordenadas')
-        print('==========================================')
-        continue
+        x = float(input('Ingrese X: '))
+        y = float(input('Ingrese Y: '))
+        # Se inicia una sentencia if, la primera para verificar si los X y Y se encuentran en el 
+        # cuadrante I, ya que si los valores de x,y son positivos (+,+) => Cuadrante I, si lo anterior es
+        # verdadero se imprime en pantalla el mensaje que el punto está en Cuadrante I. Se emplea break para
+        # finalizar el ciclo while.
+        if x > 0 and y > 0:
+            print('-----------------------------------------------------')
+            print(f'El punto se encuentra en el cuadrante {c1}.')
+            print('-----------------------------------------------------')
+            break
+        # Si la sentencia anterior es Falsa, se usa una sentencia elif, para verificar si los puntos X y Y se encuentran en el 
+        # cuadrante II, si el valor de x es negativo y y es positivo (+,-) => Cuadrante II, si lo anterior es
+        # verdadero se imprime en pantalla el mensaje que el punto está en Cuadrante II. Se emplea break para
+        # finalizar el ciclo while.
+        elif x < 0 and y > 0:
+            print('-----------------------------------------------------')
+            print(f'El punto se encuentra en el cuadrante {c2}.')
+            print('-----------------------------------------------------')
+            break
+        # Si las dos sentencias anteriores son Falsas, se usa otra sentencia elif, para verificar si los puntos X y Y 
+        # se encuentran en el cuadrante III, si el valor de X es negativo y Y es negativo (-,-) => Cuadrante III, 
+        # si lo anterior es verdadero se imprime en pantalla el mensaje que el punto está en Cuadrante III. 
+        # Se emplea break para finalizar el ciclo while.
+        elif x < 0 and y < 0:
+            print('-----------------------------------------------------')
+            print(f'El punto se encuentra en el cuadrante {c3}.')
+            print('-----------------------------------------------------')
+            break
+        # Si las tres sentencias anteriores son Falsas, se usa otra sentencia elif, para verificar si los puntos X y Y 
+        # se encuentran en el cuadrante IV, si el valor de X es positivo y Y es negativo (+,-) => Cuadrante IV, 
+        # si lo anterior es verdadero se imprime en pantalla el mensaje que el punto está en Cuadrante IV. 
+        # Se emplea break para finalizar el ciclo while.
+        elif x > 0 and y < 0:
+            print('-----------------------------------------------------')
+            print(f'El punto se encuentra en el cuadrante {c4}.')
+            print('-----------------------------------------------------')
+            break
+        # Se emple else para verificar que los puntos X,Y ingresados por el usuario sean diferentes de cero. 
+        # Por lo tanto, si el usuario ingresa dos ceros se le pedirá que ingrese las coordenadas o puntos nuevamente.
+        # Por medio de continue se vuelve al punto inicial del ciclo while.
+        else:
+            print('==========================================')
+            print('Las coordenadas deben ser diferentes de 0.\nIngresa nuevamente las coordenadas')
+            print('==========================================')
+            continue
+    except ValueError:
+         print('=====================================================================')
+         print('Valor inválido, recuerda que solo recibe números enteros o decimales.')
+         print('=====================================================================')
